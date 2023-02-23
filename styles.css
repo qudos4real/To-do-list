@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgba(9, 117, 9, 0.685);
+}
+.container {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.title {
+  margin: 50px auto;
+  font-size: 50px;
+  font-weight: 800;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-underline-offset: 15px;
+}
+.input {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: large;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+.output {
+  border: none;
+  border-radius: 15px;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: large;
+  background-color: blue;
+  color: white;
+  margin-top: 15px;
+}
+.output:hover {
+  background-color: red;
+  color: blue;
+  font-weight: 700;
+  cursor: pointer;
+}
