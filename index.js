@@ -1,28 +1,28 @@
-let list = [];
-
-function onSubmit(e) {
-  e.preventDefault();
-  const input = document.getElementById("inputValue").value;
-  list.push(input);
-  addList();
-  document.getElementById("inputValue").value = "";
-  list = [];
-}
+let lists = [];
 
 const form = document.getElementById("form");
 form.addEventListener("submit", onSubmit);
 
+function onSubmit(e) {
+  e.preventDefault();
+  const input = document.getElementById("inputValue").value;
+  lists.push(input);
+  addList();
+  document.getElementById("inputValue").value = "";
+}
+
 function addList() {
   const output = document.getElementById("output");
-  for (let i of list) {
-    output.innerHTML += "<div id='output' class='output'>" + i + "</div>";
+  output.innerHTML = "";
+  for (let index in lists) {
+    let list = lists[index];
+    output.innerHTML += `<div id='output' onclick='deleteItem(${index})' class='output'> ${list}</div>`;
   }
 }
 
-function onDelete(e) {
-  const remove = document.getElementById("output");
-  e.target.remove();
+function deleteItem(index) {
+  lists = lists.filter((word, i) => i != index);
+  addList();
 }
 
-const remove = document.getElementById("output");
-remove.addEventListener("click", onDelete);
+
