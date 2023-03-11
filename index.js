@@ -7,11 +7,11 @@ function onSubmit(e) {
   e.preventDefault();
   const input = document.getElementById("inputValue").value;
   lists.push(input);
-  addNewTaskToList();
+  updateUI();
   document.getElementById("inputValue").value = "";
 }
 
-function addNewTaskToList() {
+function updateUI() {
   const output = document.getElementById("output");
   output.innerHTML = "";
   for (let index in lists) {
@@ -22,7 +22,7 @@ function addNewTaskToList() {
 
 function deleteTaskFromList(index) {
   lists = lists.filter((word, i) => i != index);
-  addNewTaskToList();
+  updateUI();
 }
 
 
